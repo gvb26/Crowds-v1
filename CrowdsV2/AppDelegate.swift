@@ -9,19 +9,26 @@
 import UIKit
 import GoogleMaps
 
+// 1. Add the ESTBeaconManagerDelegate protocol
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, ESTBeaconManagerDelegate {
 
     var window: UIWindow?
     let googleMapsApiKey = "AIzaSyDFTyYw2d0oUd6Vk4qnvhQ1H2K7gY5zYW4"
-   
+    
+   // 2. Add a property to hold the beacon manager and instantiate it
+    let beaconManager = ESTBeaconManager()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         GMSServices.provideAPIKey(googleMapsApiKey)
-        
+        // 3. Set the beacon manager's delegate
+        self.beaconManager.delegate = self
+        // add this below:
+        self.beaconManager.requestAlwaysAuthorization()
         // Override point for customization after application launch.
         return true
     }
-
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
