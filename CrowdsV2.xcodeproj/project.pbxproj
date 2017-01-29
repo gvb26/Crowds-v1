@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7709C6BF1E3D85160012C8AF /* EstimoteSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7709C6BE1E3D85160012C8AF /* EstimoteSDK.framework */; };
 		773836B71D60F74E0068E0A6 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773836B61D60F74E0068E0A6 /* SignupVC.swift */; };
 		77F3E6011D5FFF8B00D19B41 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 77F3E6001D5FFF8B00D19B41 /* Podfile */; };
 		7A4335DF1CC20A6B00E5CE49 /* crowdsMainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4335DE1CC20A6B00E5CE49 /* crowdsMainScreen.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7709C6BE1E3D85160012C8AF /* EstimoteSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EstimoteSDK.framework; sourceTree = "<group>"; };
 		773836B61D60F74E0068E0A6 /* SignupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
 		77F3E6001D5FFF8B00D19B41 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		7A4335DE1CC20A6B00E5CE49 /* crowdsMainScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = crowdsMainScreen.swift; path = ../crowdsMainScreen.swift; sourceTree = "<group>"; };
@@ -49,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7709C6BF1E3D85160012C8AF /* EstimoteSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +113,7 @@
 		F3B0E1F46B504C7CFE506192 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7709C6BE1E3D85160012C8AF /* EstimoteSDK.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -407,6 +411,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = ADXS38U6E9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = CrowdsV2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.maps.Crowds;
@@ -428,6 +436,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = ADXS38U6E9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = CrowdsV2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.maps.Crowds;
