@@ -19,14 +19,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ESTBeaconManagerDelegate 
    // 2. Add a property to hold the beacon manager and instantiate it
     let beaconManager = ESTBeaconManager()
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
         GMSServices.provideAPIKey(googleMapsApiKey)
         // 3. Set the beacon manager's delegate
         self.beaconManager.delegate = self
         // add this below:
         self.beaconManager.requestAlwaysAuthorization()
-        // Override point for customization after application launch.
+        // add this below:
+        self.beaconManager.startMonitoring(for: CLBeaconRegion(
+            proximityUUID: NSUUID(uuidString: "B9407F30-F5F8-466E-AFF9-25556B57FE6D")! as UUID,
+            major: 11595, minor: 3035, identifier: "monitored region"))
+        UIApplication.shared.registerUserNotificationSettings(
+            UIUserNotificationSettings(types: .alert, categories: nil));
         return true
+    }
+    
+    
+    func beaconManager(manager: Any, didEnterRegion region: CLBeaconRegion) {
+        let notification = UILocalNotification()
+        notification.alertBody =
+            "You are near Gaurang Bham" +
+            "Stay away from him cuz, " +
+            "He smells like a bumm. "
+        UIApplication.shared.presentLocalNotificationNow(notification)
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
